@@ -22,7 +22,7 @@ class myInfer(inferServer):
         self.std = torch.tensor([0.12677416, 0.12194977, 0.1188112, 0.19847064]).unsqueeze(0).unsqueeze(2).unsqueeze(3).to(device)
         data = torch.ones((1, 4, 256, 256)).to(device)
         self.model = model.to(device)
-        checkpoint = torch.load('1.pth',map_location=device)
+        checkpoint = torch.load('ibnUnet+fft+wc0005+dilation.pth',map_location=device)
         self.model.load_state_dict(checkpoint['state_dict'])
         self.model.eval()
 
